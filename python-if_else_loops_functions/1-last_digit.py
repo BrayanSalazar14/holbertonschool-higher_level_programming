@@ -5,7 +5,7 @@ if number > 0:
     lastDigit = number % 10
 else:
     lastDigit = number % -10
-    print("Last digit of", number, "is", lastDigit, end=' ')
+print("Last digit of", number, "is", lastDigit, end=' ')
 if lastDigit == 0:
     print(f"and is 0")
 elif lastDigit > 5:
