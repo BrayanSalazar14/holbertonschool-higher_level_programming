@@ -2,4 +2,4 @@
 for i in range(0, 99):
     print("{:02d}, ".format(i), end="")
 i = i + 1
-print("{}\n".format(i), end="")
+print("{}".format(i), end= "\n")
