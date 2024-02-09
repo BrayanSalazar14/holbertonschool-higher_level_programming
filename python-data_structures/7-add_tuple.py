@@ -4,6 +4,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
     b = (0, 0)
     lengthA = len(tuple_a)
     lengthB = len(tuple_b)
+    finalTuple = (0, 0)
 
     if lengthA == 0:
         a
@@ -19,4 +20,5 @@ def add_tuple(tuple_a=(), tuple_b=()):
     elif lengthB >= 2:
         b = (tuple_b[0], tuple_b[1])
 
-    return(a[0] + b[0], a[1] + b[1])
+    finalTuple = (a[0] + b[0], a[1] + b[1])
+    return finalTuple
