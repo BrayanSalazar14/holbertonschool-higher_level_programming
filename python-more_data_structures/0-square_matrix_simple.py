@@ -4,7 +4,20 @@ def square_matrix_simple(matrix=[]):
     matrixSquare = []
 
     for rows in range(length):
-        matrix2.append([])
-        for columns in range(len(matrix[rows])):
-            matrixSquare[rows].append(matrix[rows][columns] * matrix[rows][columns])
-    return matrix2
+        matrixSquare.append([])
+        # matrixSquare[[]]
+        for colum in range(len(matrix[rows])):
+            matrixSquare[rows].append(matrix[rows][colum]*matrix[rows][colum])
+            # matrix[[1,4,9]...]
+    return matrixSquare
+
+
+"""Other form
+def square_matrix_simple(matrix=[]):
+    matrixSquare = []
+    for rows in matrix:
+        square = []
+        for columns in rows:
+            square.append(columns * columns)
+        matrixSquare.append(square)
+    return matrixSquare """
