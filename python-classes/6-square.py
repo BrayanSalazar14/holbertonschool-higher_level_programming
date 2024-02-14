@@ -5,8 +5,8 @@
 class Square:
     """Method creation"""
     def __init__(self, size=0, position=(0, 0)):
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     def area(self):
         return self.__size ** 2
@@ -27,16 +27,6 @@ class Square:
             print("size must be an integer", end="")
             raise TypeError
 
-    def my_print(self):
-        if self.__size > 0:
-            if self.__position[1] > 0:
-                print(" " * self.__position[1])
-            for index in range(self.__size):
-                print(" " * self.__position[0], end="")
-                print("#" * self.__size)
-        else:
-            print()
-
     @property
     def position(self):
         return self.__position
@@ -48,3 +38,13 @@ class Square:
         else:
             print("position must be a tuple of 2 positive integers")
             raise TypeError
+
+    def my_print(self):
+        if self.size > 0:
+            if self.position[1] > 0:
+                print(" " * self.position[1])
+            for index in range(self.size):
+                print(" " * self.position[0], end="")
+                print("#" * self.size)
+        else:
+            print()
