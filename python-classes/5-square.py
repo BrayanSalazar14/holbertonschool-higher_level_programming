@@ -32,3 +32,15 @@ class Square:
                 print("#" * self.__size)
         else:
             print()
+
+
+"""Other form
+def my_print(self):
+        if self.__size == 0:
+            print()
+        else:
+            for row in range(0, self.__size):
+                for columns in range(0, self.__size):
+                    print("#", end="")
+                print()
+"""
