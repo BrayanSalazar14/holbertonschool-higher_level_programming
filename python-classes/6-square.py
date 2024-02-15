@@ -36,7 +36,7 @@ class Square:
         if isinstance(value[0], int) and isinstance(value[1], int):
             self.__position = (value[0], value[1])
         else:
-            print("position must be a tuple of 2 positive integers")
+            print("position must be a tuple of 2 positive integers", end="")
             raise TypeError
 
     def my_print(self):
