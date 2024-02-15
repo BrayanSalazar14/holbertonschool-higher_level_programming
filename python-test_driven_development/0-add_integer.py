@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
 This is a function that adds 2 integers.
-for example:
 >>> add_integer(1, 2)
 3
 """
