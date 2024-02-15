@@ -11,8 +11,9 @@ This is an example text file in 0-add_integer.py.  First import
 >>> add_integer(2, 3)
 5
 
->>> add_integer(100.3, 3)
-103
+>>> add_integer(1e10000000, 3)
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
 
 >>> add_integer(float(100), 3)
 103
