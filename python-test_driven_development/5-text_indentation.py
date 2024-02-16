@@ -21,6 +21,6 @@ def text_indentation(text):
             else:
                 textIndent += chars
                 textIndent += "\n" * 2
-        print(textIndent)
+        print(textIndent, end="")
     else:
         raise TypeError("text must be a string")
