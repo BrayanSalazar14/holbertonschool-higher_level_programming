@@ -28,9 +28,9 @@ TypeError: a must be an integer
 >>> add_integer(2, -1)
 1
 
->>> add_integer(float(None), 2)
+>>> add_integer(float("NaN"), 2)
 Traceback (most recent call last):
-TypeError: float() argument must be a string or a real number, not 'NoneType'
+ValueError: cannot convert float NaN to integer
 
 >>> add_integer("Hello", "Holbie")
 Traceback (most recent call last):
