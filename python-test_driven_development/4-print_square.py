@@ -12,7 +12,7 @@ def print_square(size):
     """Function that prints a square
     Print a square using size
     """
-    if isinstance(size, int) or size > 0:
+    if isinstance(size, int):
         if size >= 0:
             for index in range(size):
                 print("#" * size)
@@ -24,7 +24,7 @@ def print_square(size):
 
 """Other form"""
 """def print_square(size):"""
-#    if isinstance(size, int) and size > 0:
+#    if isinstance(size, int):
 #        if size >= 0:
 #            for rows in range(size):
 #                for columns in range(size):
