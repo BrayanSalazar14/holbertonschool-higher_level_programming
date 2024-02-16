@@ -30,3 +30,4 @@ def matrix_divided(matrix, div):
             raise ZeroDivisionError("division by zero")
     else:
         raise TypeError("div must be a number")
+
