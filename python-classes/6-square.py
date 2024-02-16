@@ -45,7 +45,7 @@ class Square:
     def my_print(self):
         if self.__size > 0:
             if self.__position[1] > 0:
-                print("" * self.__position[1])
+                print("\n" * self.__position[1], end="")
             for index in range(self.__size):
                 print(" " * self.__position[0], end="")
                 print("#" * self.__size)
