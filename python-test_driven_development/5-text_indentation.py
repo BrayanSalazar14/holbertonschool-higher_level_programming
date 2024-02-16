@@ -19,7 +19,7 @@ def text_indentation(text):
             if text[chars - 1] == '.' or text[chars - 1] == '?' or text[chars - 1] == ':':
                 if text[chars] != " ":
                     textIndent += text[chars]
-            elif text[chars] != '.' and text[chars] != '?' and text[chars] != ':':
+            elif text[chars] != '.' and text[chars] != '?' and text[chars] != ':' and text[chars]:
                 textIndent += text[chars]
             else:
                 textIndent += text[chars]
