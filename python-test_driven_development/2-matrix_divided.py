@@ -15,19 +15,20 @@ def matrix_divided(matrix, div):
     if type(div) == int or type(div) == float:
         if div != 0:
             newMatrix = []
+            firstPosition = len(matrix[0])
             for rows in range(len(matrix)):
                 newMatrix.append([])
                 for columns in matrix[rows]:
-                    if isinstance(columns, (int, float)):
-                        newMatrix[rows].append(round((columns / div), 2))
+                    if firstPosition == len(matrix[rows]):
+                        if isinstance(columns, (int, float)):
+                            newMatrix[rows].append(round((columns / div), 2))
+                        else:
+                            raise TypeError("matrix must be a matrix (list " +
+                                            "of lists) of integers/floats")
                     else:
-                        raise TypeError("matrix must be a matrix " +
-                                        "(list of lists) of integers/floats")
-            if len(matrix[rows]) == len(newMatrix[0]):
-                return newMatrix
-            else:
-                raise TypeError("Each row of the matrix " +
-                                "must have the same size")
+                        raise TypeError("Each row of the matrix " +
+                                        "must have the same size")
+            return newMatrix
         else:
             raise ZeroDivisionError("division by zero")
     else:
