@@ -15,14 +15,16 @@ def text_indentation(text):
     """
     textIndent = ""
     if isinstance(text, str):
-        for chars in range(len(text)):
-            if text[chars - 1] == '.' or text[chars - 1] == '?' or text[chars - 1] == ':':
-                if text[chars] != " ":
-                    textIndent += text[chars]
-            elif text[chars] != '.' and text[chars] != '?' and text[chars] != ':' and text[chars]:
-                textIndent += text[chars]
+        for index in range(len(text)):
+            chars = text[index]
+            lastChars = text[index - 1]
+            if lastChars == '.' or lastChars == '?' or lastChars == ':':
+                if chars != " ":
+                    textIndent += chars
+            elif chars != '.' and chars != '?' and chars != ':' and chars:
+                textIndent += chars
             else:
-                textIndent += text[chars]
+                textIndent += chars
                 textIndent += "\n" * 2
         print(textIndent, end="")
     else:
