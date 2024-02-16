@@ -2,15 +2,15 @@
 """
 This is the "matrix_divided" module.
 The add module supplies one function, matrix_divided().  For example,
->>> matrix_divided(matrix, 3)
+matrix_divided(matrix, 3)
 [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 [[1, 2, 3], [4, 5, 6]]
 """
 
 
 def matrix_divided(matrix, div):
-    """Returns an new matrix:
-    With all elements of the matrix divided by div
+    """With all elements of the matrix divided by div
+    Returns: new matrix with new elements
     """
     if type(div) == int or type(div) == float:
         if div != 0:
