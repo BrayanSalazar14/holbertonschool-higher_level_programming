@@ -9,23 +9,19 @@ hi.
 
 
 def text_indentation(text):
-    """Function that prints an text
-    function that prints a text with 2 new lines after each of
+    """Function that prints a text with 2 new lines after each of
     these characters: ., ? and :
     """
-    textIndent = ""
-    if isinstance(text, str):
-        for index in range(len(text)):
-            chars = text[index]
-            lastChars = text[index - 1]
-            if lastChars == '.' or lastChars == '?' or lastChars == ':':
-                if chars != " ":
-                    textIndent += chars
-            elif chars != '.' and chars != '?' and chars != ':' and chars:
-                textIndent += chars
-            else:
-                textIndent += chars
-                textIndent += "\n" * 2
-        print(textIndent, end="")
-    else:
+    if not isinstance(text, str):
         raise TypeError("text must be a string")
+
+    result = []
+    for index, char in enumerate(text):
+        if index == 0 or text[index - 1] not in ['.', '?', ':']:
+            result.append(char)
+        elif char != " ":
+            result.append(char)
+        if char in ['.', '?', ':']:
+            result.append("\n" * 2)
+
+    print(''.join(result), end="")
