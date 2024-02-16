@@ -18,6 +18,14 @@ This is an example text file in 4.print_square.py.  First import
 Traceback (most recent call last):
 ValueError: size must be >= 0
 
->>> print_square("h")
+
+>>> print_square(float(4))
 Traceback (most recent call last):
 TypeError: size must be an integer
+
+>>> print_square(0)
+
+
+>>> print_square()
+Traceback (most recent call last):
+TypeError: print_square() missing 1 required positional argument: 'size'
