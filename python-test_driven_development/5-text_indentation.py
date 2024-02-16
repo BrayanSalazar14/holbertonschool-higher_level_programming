@@ -16,11 +16,14 @@ def text_indentation(text):
     textIndent = ""
     if isinstance(text, str):
         for chars in text:
-            if chars != '.' and chars != '?' and chars != ':':
+            if chars != '.' and chars != '?' and chars != ':' and chars != " ":
                 textIndent += chars
             else:
-                textIndent += chars
-                textIndent += "\n" * 2
+                if chars == " ":
+                    textIndent += " "
+                else:
+                    textIndent += chars
+                    textIndent += "\n" * 2
         print(textIndent, end="")
     else:
         raise TypeError("text must be a string")
