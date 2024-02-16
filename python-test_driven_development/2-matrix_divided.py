@@ -12,7 +12,7 @@ def matrix_divided(matrix, div):
     """With all elements of the matrix divided by div
     Returns: new matrix with new elements
     """
-    if type(div) == int or type(div) == float:
+    if isinstance(div, (int, float)):
         if div != 0:
             newMatrix = []
             firstPosition = len(matrix[0])

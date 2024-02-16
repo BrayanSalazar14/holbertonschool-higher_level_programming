@@ -20,14 +20,13 @@ TypeError: last_name must be a string
 Traceback (most recent call last):
 TypeError: say_my_name() missing 1 required positional argument: 'first_name'
 
->>> say_my_name(["Hola"], ("hola"))
+>>> say_my_name(["Hola"], ("hola",)) 
 Traceback (most recent call last):
 TypeError: first_name must be a string
-
->>> say_my_name("hi", None)
-Traceback (most recent call last):
-TypeError: last_name must be a string
 
 >>> say_my_name("1234", 1234)
 Traceback (most recent call last):
 TypeError: last_name must be a string
+
+>>> say_my_name("Brayan", "Salazar")
+My name is Brayan Salazar

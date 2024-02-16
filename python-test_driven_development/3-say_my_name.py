@@ -2,7 +2,7 @@
 """
 This is the "say_my_name" module.
 The add module supplies one function, say_my_name().  For example,
->>> say_my_name("Brayan", Salazar)
+>>> say_my_name("Brayan", "Salazar")
 My name is Brayan Salazar
 """
 
