@@ -18,14 +18,14 @@ def text_indentation(text):
 
     listSearch = [".", "?", ":"]
     textIndent = ""
-    copy = ""
+    copy = ''
     for chars in text:
         if chars not in listSearch:
-            if chars == " " and copy in listSearch:
-                copy = ""
+            if copy == " " and chars == " ":
                 continue
-            copy = ""
-            textIndent += chars
+            if copy not in listSearch or chars != " ":
+                textIndent += chars
+            copy = chars
             continue
         copy = chars
         textIndent += chars
