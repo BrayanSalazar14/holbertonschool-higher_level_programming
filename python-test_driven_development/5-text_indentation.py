@@ -16,16 +16,15 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
+    listSearch = [".", "?", ":"]
     textIndent = ""
     for index in range(len(text)):
-        chars = text[index]
-        lastChars = text[index - 1]
-        if lastChars == '.' or lastChars == '?' or lastChars == ':':
-            if chars != " ":
-                textIndent += chars
-        elif chars != '.' and chars != '?' and chars != ':' and chars:
-            textIndent += chars
+        if text[index - 1] in listSearch:
+            if text[index] != " ":
+                textIndent += text[index]
+        elif text[index] not in listSearch:
+            textIndent += text[index]
         else:
-            textIndent += chars
+            textIndent += text[index]
             textIndent += "\n" * 2
     print(textIndent, end="")
