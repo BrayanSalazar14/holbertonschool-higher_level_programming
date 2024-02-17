@@ -24,6 +24,7 @@ def text_indentation(text):
             if chars == " " and copy in listSearch:
                 copy = ""
                 continue
+            copy = ""
             textIndent += chars
             continue
         copy = chars
