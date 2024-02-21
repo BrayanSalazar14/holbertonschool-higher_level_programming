@@ -9,14 +9,16 @@ class BaseGeometry:
     """
 
     def are(self):
-        """Public instance method
+        """
+        Public instance method
         Raises:
             Exception: area() is not implemented
         """
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """Public instance method:
+        """
+        Public instance method:
         Args:
             name (string)
             value (int)
