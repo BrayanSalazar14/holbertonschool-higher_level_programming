@@ -11,7 +11,7 @@ This is an example text file in 1-my_list.py.  First import
 >>> bg = BaseGeometry()
 >>> bg.area()
 Traceback (most recent call last):
-Exception: 
+Exception: area() is not implemented
 
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("my_int", 12)
