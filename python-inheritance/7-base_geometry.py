@@ -8,7 +8,7 @@ class BaseGeometry:
     """Class with two methods, area and integer_validation
     """
 
-    def are(self):
+    def area(self):
         """
         Public instance method
         Raises:
