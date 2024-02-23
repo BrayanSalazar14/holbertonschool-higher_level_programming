@@ -2,4 +2,4 @@
 
 def read_file(filename=""):
     with open(filename, "r", encoding="utf-8") as archivo:
-        print(archivo.read())
+        print(archivo.read(), end="")
