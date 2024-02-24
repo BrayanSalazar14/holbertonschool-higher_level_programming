@@ -20,11 +20,9 @@ class Student:
 
     def to_json(self, attrs=None):
         my_dic = {}
-        my_list = list(self.__dict__.items())
-        for key, value in my_list:
-            if isinstance(attrs, list) and all(type(e) is str for e in attrs):
+        if attrs is not None:
+            for key, value in self.__dict__.items():
                 if key in attrs:
                     my_dic[key] = value
-            else:
-                my_dic[key] = value
-        return my_dic
+            return my_dic
+        return self.__dict__
