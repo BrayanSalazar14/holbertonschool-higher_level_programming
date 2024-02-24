@@ -23,12 +23,12 @@ def pascal_triangle(n):
     pascal = []
     if n <= 0:
         return pascal
-    for i in range(n):
-        row = [1]
-        if i > 0:
-            prev = pascal[i - 1]
-            for j in range(1, i):
-                row.append(prev[j - 1] + prev[j])
-            row.append(1)
-        pascal.append(row)
+    for index in range(n):
+        content = [1]
+        if index > 0:
+            prev = pascal[index - 1]
+            for numbers in range(1, index):
+                content.append(prev[numbers - 1] + prev[numbers])
+            content.append(1)
+        pascal.append(content)
     return pascal
