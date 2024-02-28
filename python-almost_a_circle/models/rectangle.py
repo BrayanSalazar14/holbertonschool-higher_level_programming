@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module that class Rectangule
+Module that class Rectangle
 """
 
 
