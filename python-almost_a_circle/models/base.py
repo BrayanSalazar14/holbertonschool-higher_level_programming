@@ -1,6 +1,7 @@
 """
 Class will be the “base” of all other classes in this project
 """
+import json
 
 
 class Base:
@@ -17,3 +18,35 @@ class Base:
             self.id = Base.__nb_objects
         else:
             self.id = id
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        class_name = str(cls.__name__) + ".json"
+        if list_objs is not None:
+            list_objs_list = [obj.to_dictionary() for obj in list_objs]
+        with open(class_name, "w", encoding="utf-8") as file:
+            file.write(cls.to_json_string(list_objs_list))
+
+    @staticmethod
+    def from_json_string(json_string):
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        my_instance = cls(
+            3, 3, 5) if cls.__name__ == "Rectangle" else cls(3, 3, 5)
+        my_instance.update(**dictionary)
+        return my_instance
+
+    @classmethod
+    def load_from_file(cls):
+        class_name = str(cls.__name__) + ".json"
+        list_of_instances = []
+        with open(class_name, "r", encoding="utf-8") as file:
+            list_iterate = cls.from_json_string(file.read())
+            list_of_instances = [cls.create(**obj) for obj in list_iterate]
+        return list_of_instances

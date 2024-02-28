@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-import sys
 from models.base import Base
 
 
@@ -31,7 +30,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         if not isinstance(value, int):
-            raise TypeError("Width must be an integer")
+            raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
@@ -70,14 +69,27 @@ class Rectangle(Base):
             print("#" * self.width)
 
     def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        text_rectangle = "[Rectangle] "
+        text_completed = f"{text_rectangle}({self.id}) {
+            self.x}/{self.y} - {self.width}/{self.height}"
+        return text_completed
 
     def update(self, *args, **kwargs):
         attributes = ['id', 'width', 'height', 'x', 'y']
-        if args is not None and args is not ():
+        if args is not None and args != ():
             for i, value in enumerate(args):
                 setattr(self, attributes[i], value)
         else:
             for key, value in kwargs.items():
                 if key in attributes:
                     setattr(self, key, value)
+
+    def to_dictionary(self):
+        dict_rectangle = {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
+        return dict_rectangle
