@@ -42,8 +42,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        my_instance = cls(
-            3, 3, 5) if cls.__name__ == "Rectangle" else cls(3, 3, 5)
+        my_instance = cls(1, 1) if cls.__name__ == "Rectangle" else cls(1)
         my_instance.update(**dictionary)
         return my_instance
 
