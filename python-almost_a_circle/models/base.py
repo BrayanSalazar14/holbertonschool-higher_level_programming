@@ -3,6 +3,7 @@
 Class will be the “base” of all other classes in this project
 """
 import json
+import os
 
 
 class Base:
@@ -49,6 +50,8 @@ class Base:
     @classmethod
     def load_from_file(cls):
         class_name = str(cls.__name__) + ".json"
+        if not os.path.exists(class_name):
+            return []
         list_of_instances = []
         with open(class_name, "r", encoding="utf-8") as file:
             list_iterate = cls.from_json_string(file.read())
