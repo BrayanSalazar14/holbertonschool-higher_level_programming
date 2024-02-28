@@ -8,8 +8,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """
-    Rectangle class that inherits from Base."""
+    """Rectangle class that inherits from Base."""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
@@ -71,3 +70,9 @@ class Rectangle(Base):
         Method that returns the area value of the Rectangle instance.
         """
         return self.width * self.height
+
+    def display(self):
+        print("\n" * self.y, end="")
+        for _ in range(self.height):
+            print(" " * self.x, end="")
+            print("#" * self.width)
