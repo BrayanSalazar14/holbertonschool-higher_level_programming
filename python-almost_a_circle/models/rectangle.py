@@ -89,3 +89,26 @@ class Rectangle(Base):
         """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args, **kwargs):
+        """
+        Method that assigns an argument to each attribute
+        """
+        attributes = ['id', 'width', 'height', 'x', 'y']
+        if args is not None and args != ():
+            for i, value in enumerate(args):
+                setattr(self, attributes[i], value)
+        else:
+            for key, value in kwargs.items():
+                if key in attributes:
+                    setattr(self, key, value)
+
+    def to_dictionary(self):
+        dict_rectangle = {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
+        return dict_rectangle
