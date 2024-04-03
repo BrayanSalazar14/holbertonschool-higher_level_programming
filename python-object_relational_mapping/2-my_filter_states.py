@@ -20,7 +20,7 @@ if __name__ == "__main__":
     cur.execute(
         "SELECT * FROM states WHERE name = \'{}\'".format(name_search))
     query_rows = cur.fetchall()
-    
+
     for row in query_rows:
         print(row)
 
