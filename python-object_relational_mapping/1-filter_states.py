@@ -19,7 +19,7 @@ if __name__ == "__main__":
     query_rows = cur.fetchall()
 
     for row in query_rows:
-        if row[1][:1] == "N":
+        if row[1][:1] == "N" or row[1][:1] == "n":
             print(row)
 
     cur.close()
