@@ -18,9 +18,9 @@ if __name__ == "__main__":
                          user=my_sql_user, passwd=my_sql_pass, db=my_sql_db)
     cur = db.cursor()
     cur.execute(
-        "SELECT * FROM states WHERE name = \'{}\' ORDER BY id".format(name_search))
+        "SELECT * FROM states WHERE name = \'{}\'".format(name_search))
     query_rows = cur.fetchall()
-    print(*query_rows)
+    print(query_rows[0])
 
     cur.close()
     db.close()
