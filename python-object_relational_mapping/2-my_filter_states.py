@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Script that lists all states with a name starting with N (upper N)
-from the database hbtn_0e_0_usa
+Script should take 4 arguments: mysql username, mysql password,
+database name and state name searched (no argument validation needed)
 """
 
 
