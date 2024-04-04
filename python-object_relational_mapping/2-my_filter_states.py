@@ -20,7 +20,7 @@ if __name__ == "__main__":
     cur.execute(
         "SELECT * FROM states WHERE BINARY name = '{}'".format(name_search))
     query_rows = cur.fetchall()
-    print(*[row for row in query_rows])
+    print([row for row in query_rows][0])
 
     cur.close()
     db.close()
