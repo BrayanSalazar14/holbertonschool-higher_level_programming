@@ -19,7 +19,7 @@ if __name__ == "__main__":
     cur = db.cursor()
     cur.execute("SELECT * FROM states")
     query_rows = cur.fetchall()
-    print(*[row for row in query_rows if row[1] == name_search])
+    [print(row) for row in query_rows if row[1] == name_search]
 
     cur.close()
     db.close()
