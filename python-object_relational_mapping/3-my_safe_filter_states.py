@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Script should take 4 arguments: mysql username, mysql password,
-database name and state name searched (no argument validation needed)
+script should take 4 arguments: mysql username, mysql password,
+database name and state name searched (safe from MySQL injection)
 """
 
 
@@ -17,10 +17,9 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", port=3306,
                          user=my_sql_user, passwd=my_sql_pass, db=my_sql_db)
     cur = db.cursor()
-    cur.execute(
-        "SELECT * FROM states WHERE BINARY name = '{}'".format(name_search))
+    cur.execute("SELECT * FROM states")
     query_rows = cur.fetchall()
-    print(*[row for row in query_rows])
+    print(*[row for row in query_rows if row[1] == name_search])
 
     cur.close()
     db.close()
