@@ -18,7 +18,7 @@ if __name__ == "__main__":
                          user=my_sql_user, passwd=my_sql_pass, db=my_sql_db)
     cur = db.cursor()
     cur.execute(
-        "SELECT * FROM states WHERE BINARY name = '{}'".format(name_search))
+        "SELECT * FROM states WHERE name = '{}'".format(name_search))
     query_rows = cur.fetchall()
     print([row for row in query_rows][0])
 
