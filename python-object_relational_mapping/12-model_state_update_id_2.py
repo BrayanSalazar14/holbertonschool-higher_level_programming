@@ -17,5 +17,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     nw_name_row = session.query(State).filter_by(id=2).first()
-    my_name_row = "New Mexico"
+    nw_name_row.name = "New Mexico"
     session.commit()
+    # nw_name_row = update(State)
+    # nw_name_row = nw_name_row.where(State.id == 17)
+    # nw_name_row = nw_name_row.values(name="New Mexico")
+    # engine.execute(nw_name_row)
