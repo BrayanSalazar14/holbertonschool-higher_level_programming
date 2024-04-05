@@ -5,7 +5,8 @@ objects from the database hbtn_0e_14_usa
 """
 
 
-from model_state import Base, State, City
+from model_state import Base, State
+from model_city import City
 from sys import argv
 from sqlalchemy.orm import sessionmaker
 
