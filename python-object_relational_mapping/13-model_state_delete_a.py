@@ -21,4 +21,3 @@ if __name__ == "__main__":
     for row in nw_name_row:
         session.delete(row)
     session.commit()
-
