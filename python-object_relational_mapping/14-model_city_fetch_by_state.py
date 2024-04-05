@@ -19,9 +19,7 @@ if __name__ == "__main__":
     session = Session()
     new_instance = session.query(State.name, City.id, City.name).\
         order_by(City.id).\
-        join(City, City.state_id == State.id, isouter=True)
+        join(City, City.state_id == State.id, isouter=True).all()
 
     for rows in new_instance:
         print(f"{rows[0]}: ({rows.id}) {rows.name}")
-
-    session.commit()
