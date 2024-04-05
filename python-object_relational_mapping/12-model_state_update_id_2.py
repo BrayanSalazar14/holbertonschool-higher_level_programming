@@ -7,7 +7,6 @@ Script that changes the name of a State object from the database hbtn_0e_6_usa
 from model_state import Base, State
 from sys import argv
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import update
 from sqlalchemy import (create_engine)
 
 if __name__ == "__main__":
@@ -16,7 +15,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    nw_name_row = session.query(State).filter_by(id=2).first()
+    nw_name_row = session.query(State).filter_by(id=17).first()
     nw_name_row.name = "New Mexico"
     session.commit()
     # nw_name_row = update(State)

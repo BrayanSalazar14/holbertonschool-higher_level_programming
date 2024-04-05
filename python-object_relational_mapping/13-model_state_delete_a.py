@@ -20,4 +20,5 @@ if __name__ == "__main__":
     nw_name_row = session.query(State).filter(State.name.contains("a"))
     for row in nw_name_row:
         session.delete(row)
-        session.commit()
+    session.commit()
+
