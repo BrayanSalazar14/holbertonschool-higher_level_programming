@@ -17,9 +17,11 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    new_instance = session.query(State.name, City.id, City.name).\
-        order_by(City.id).\
-        join(City, City.state_id == State.id, isouter=True).all()
+    # new_instance = session.query(State.name, City.id, City.name).\
+    #     order_by(City.id).\
+    #     join(City, City.state_id == State.id, isouter=True).all()
 
-    for rows in new_instance:
-        print(f"{rows[0]}: ({rows.id}) {rows.name}")
+    for city, state in session.query(City, State).\
+            filter(City.state_id == State.id).\
+            order_by(City.id):
+        print(f"{state.name}: ({city.id}) {city.name}")
