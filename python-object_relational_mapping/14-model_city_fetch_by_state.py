@@ -9,7 +9,6 @@ from model_state import Base, State
 from model_city import City
 from sys import argv
 from sqlalchemy.orm import sessionmaker
-
 from sqlalchemy import (create_engine)
 
 if __name__ == "__main__":
@@ -21,5 +20,8 @@ if __name__ == "__main__":
     new_instance = session.query(State.name, City.id, City.name).\
         order_by(City.id).\
         join(City, City.state_id == State.id, isouter=True)
+
     for rows in new_instance:
         print(f"{rows[0]}: ({rows.id}) {rows.name}")
+
+    session.commit()
